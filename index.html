@@ -12,7 +12,52 @@
 </head>
 
 <body>
-    <h1 class="container">Weather App</h1>
+    <div class="container sm app-box">
+        <div class="container ps-0">
+            <form>
+                <div class="row">
+                    <div class="col-8">
+                        <input type="text" placeholder="Enter city here" id="search-field">
+                    </div>
+                    <div class="col-4"><button type="submit" id="search-btn">🔍 Search</button></div>
+                </div>
+                <div class="row">
+                    <div class="col-8"><button id="current-location-btn">📍 Use current location</button></div>
+                    <div class="col-4"></div>
+                </div>
+            </form>
+            <hr style="color:#9b9ea5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="display-city">New York</div>
+                        <div>
+                            <span class="date">Sunday, 13:34,</span>
+                            <span class="weather-description">clear sky</span>
+                        </div>
+                        <div>
+                            <span class="humidity">Humidity: <span class="display-humidity">55%</span>,</span>
+                            <span class="wind">Wind: <span class="display-wind">1km/h</span></span>
+                        </div>
+                    </div>
+                    <div class="col-4 current-weather">
+                        <span class="current-icon">☀️ </span>
+                        <span class="display-temp">3</span>
+                        <span class="metric-celsius">°C</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="credit">
+            <div><a href="https://github.com/susawell/vanilla-weather-web-app" target="blank"> Open-source
+                    code</a>
+                hosted on <a href="https://sunnysomewhere.netlify.app">Netlify</a></div>
+            <div>Coded by Susanne Welling</div>
+        </div>
+    </div>
+
     <script src="src/index.js"></script>
 </body>
 

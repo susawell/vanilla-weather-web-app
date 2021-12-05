@@ -1,0 +1,95 @@
+body {
+  background-color: #f9f7fe !important;
+}
+
+.app-box {
+  display: block;
+  margin: 60px auto 10px;
+  padding: 50px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: white;
+  max-width: 920px;
+}
+
+form {
+  padding-left: 12px;
+}
+
+#search-field,
+#search-btn {
+  height: 50px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+#search-field {
+  background: #f9f7fe;
+  border: 1px solid #f9f7fe;
+}
+
+#search-btn {
+  background: #885ef1;
+  border: 1px solid #885ef1;
+  font-weight: bold;
+  color: white;
+  transition: 200ms all ease-in-out;
+  cursor: pointer;
+  display: inline;
+}
+
+#search-btn:hover {
+  background: #005689;
+}
+
+#current-location-btn {
+  width: 100%;
+  border: none;
+  background: none;
+  font-size: 0.8em;
+  text-align: left;
+}
+
+.display-city {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.date,
+.weather-description,
+.humidity,
+.wind {
+  color: #9b9ea5;
+}
+
+.display-humidity,
+.display-wind {
+  color: #fe77a3;
+}
+
+.current-weather {
+  text-align: end;
+}
+
+.display-temp {
+  font-size: 4em;
+  position: relative;
+  top: -13px;
+}
+.current-icon {
+  position: relative;
+  top: -20px;
+  font-size: 3em;
+}
+.metric-celsius {
+  position: relative;
+  top: -41px;
+  font-size: 1.5em;
+}
+
+.credit {
+  text-align: center;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
