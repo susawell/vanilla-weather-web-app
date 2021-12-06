@@ -62,6 +62,7 @@ ul {
 
 li {
   list-style: none;
+  text-transform: capitalize;
 }
 
 .date,
