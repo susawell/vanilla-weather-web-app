@@ -5,6 +5,7 @@ function displayWeather(response) {
   document.querySelector(".display-temp").innerHTML = Math.round(
     response.data.main.temp
   );
+  document.querySelector(".date").innerHTML = `${weekday}, ${hour}:${minutes},`;
   document.querySelector(".weather-description").innerHTML =
     response.data.weather[0].description;
   document.querySelector(
@@ -55,3 +56,20 @@ locationButton.addEventListener("click", getPosition);
 
 // Default
 searchCity("Cologne");
+
+//// Dates
+
+let now = new Date();
+let date = now.getDate();
+let weekdays = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+let weekday = weekdays[now.getDay()];
+let hour = now.getHours();
+let minutes = (now.getMinutes() < 10 ? "0" : "") + now.getMinutes();
