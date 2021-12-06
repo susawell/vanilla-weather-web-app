@@ -1,15 +1,20 @@
 body {
-  background-color: #f9f7fe !important;
+  background-color: #f9f7fe;
+}
+
+.container.zero {
+  padding: 0px 20px;
 }
 
 .app-box {
   display: block;
   margin: 60px auto 10px;
-  padding: 50px;
+  padding: 35px;
   border: 1px solid white;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: white;
-  max-width: 920px;
+  max-width: 800px;
+  box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
 }
 
 form {
@@ -48,6 +53,15 @@ form {
 .display-city {
   font-size: 1.8em;
   font-weight: bold;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
 }
 
 .date,
