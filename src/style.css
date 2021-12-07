@@ -17,6 +17,10 @@ body {
   box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
 }
 
+.row {
+  padding: 0;
+}
+
 form {
   padding-left: 12px;
 }
@@ -88,7 +92,7 @@ li {
 }
 .current-icon {
   position: relative;
-  top: -20px;
+  top: -32px;
   font-size: 3em;
 }
 .metric-celsius {
