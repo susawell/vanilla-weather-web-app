@@ -19,20 +19,20 @@
             <div class="container">
                 <form id="search-form">
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-8 p-0">
                             <input type="search" placeholder="Enter city here" autofocus="on" id="search-field" />
                         </div>
                         <div class="col-4"><button type="submit" id="search-btn">Search</button></div>
                     </div>
                     <div class="row">
-                        <div class="col-8"><button id="current-location-btn">📍 Use current location</button></div>
+                        <div class="col-8 p-0"><button id="current-location-btn">📍 Use current location</button></div>
                         <div class="col-4"></div>
                     </div>
                 </form>
                 <hr style="color:#9b9ea5">
                 <div class="container">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-6 p-0">
                             <div class="display-city">New York</div>
                             <ul>
                                 <li>
@@ -46,10 +46,12 @@
                             </ul>
 
                         </div>
-                        <div class="col-6 current-weather">
-                            <img src="http://openweathermap.org/img/wn/10d@2x.png" class="current-icon" />
+                        <div class="col-6 p-0 current-weather">
+                            <img src="https://openweathermap.org/img/wn/10d@2x.png" class="current-icon" />
                             <span class="display-temp">3</span>
-                            <span class="metric-celsius">°C</span>
+                            <span class="metric-celsius"><a href="#" id="celsius-link" class="active">°C</a></span>
+                            <span class="temp-divide">|</span>
+                            <span class="metric-celsius"><a href="#" id="fahrenheit-link">°F</a></span>
                         </div>
                     </div>
                 </div>

@@ -11,7 +11,9 @@ function displayWeather(response) {
   document.querySelector(".display-temp").innerHTML = Math.round(
     response.data.main.temp
   );
-  document.querySelector(".date").innerHTML = `${weekday}, ${hour}:${minutes},`;
+  document.querySelector(
+    ".date"
+  ).innerHTML = `${weekday}, ${hour}:${minutes} GMT+1,`;
   document.querySelector(".weather-description").innerHTML =
     response.data.weather[0].description;
   document.querySelector(
@@ -20,7 +22,7 @@ function displayWeather(response) {
   document.querySelector(
     ".display-wind"
   ).innerHTML = `${response.data.wind.speed}km/h`;
-  console.log(response);
+  celsiusTemp = response.data.main.temp;
 }
 
 //// Search for city
@@ -59,6 +61,35 @@ function getPosition(event) {
 
 let locationButton = document.querySelector("#current-location-btn");
 locationButton.addEventListener("click", getPosition);
+
+// Unit conversion C / F
+//To Fahrenheit
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheitTemp = celsiusTemp * 1.8 + 32;
+  let temperatureElement = document.querySelector(".display-temp");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+}
+
+let celsiusTemp = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
+//To Celsius
+
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector(".display-temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+}
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 // Default
 searchCity("Cologne");

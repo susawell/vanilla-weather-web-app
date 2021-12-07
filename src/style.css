@@ -13,7 +13,7 @@ body {
   border: 1px solid white;
   border-radius: 10px;
   background-color: white;
-  max-width: 800px;
+  max-width: 650px;
   box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
 }
 
@@ -52,6 +52,7 @@ form {
   background: none;
   font-size: 0.8em;
   text-align: left;
+  padding: 0px;
 }
 
 .display-city {
@@ -78,11 +79,14 @@ li {
 
 .display-humidity,
 .display-wind {
-  color: #fe77a3;
+  color: #ec6e4c;
+  text-transform: lowercase;
 }
 
 .current-weather {
   text-align: end;
+  position: relative;
+  top: -90;
 }
 
 .display-temp {
@@ -95,10 +99,25 @@ li {
   top: -32px;
   font-size: 3em;
 }
+
+.temp-divide {
+  position: relative;
+  top: -41px;
+  font-size: 1.5em;
+}
 .metric-celsius {
   position: relative;
   top: -41px;
   font-size: 1.5em;
+}
+
+.current-weather .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+.current-weather .active:hover {
 }
 
 .credit {
