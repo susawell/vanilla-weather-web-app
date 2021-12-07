@@ -117,12 +117,29 @@ li {
   text-decoration: none;
 }
 
-.current-weather .active:hover {
+.forecast-each {
+  text-align: center;
+}
+
+.forecast-day {
+  color: #9b9ea5;
+  padding: 20px 0 10px;
+}
+.forecast-icon {
+  padding: 10px 0 10px;
+}
+
+.forecast-temp {
+  color: #ec6e4c;
+  padding: 10px 0 0;
+}
+
+.forecast-temp-max {
+  font-weight: bold;
 }
 
 .credit {
   text-align: center;
-
   font-size: 12px;
   line-height: 1.5;
 }

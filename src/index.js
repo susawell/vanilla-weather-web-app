@@ -110,3 +110,13 @@ let weekdays = [
 let weekday = weekdays[now.getDay()];
 let hour = now.getHours();
 let minutes = (now.getMinutes() < 10 ? "0" : "") + now.getMinutes();
+
+//Day +1
+
+//Day +2
+
+//Day +3
+
+//Day +4
+
+//Day +5
