@@ -6,7 +6,7 @@ function displayWeather(response) {
     .querySelector(".current-icon")
     .setAttribute(
       "src",
-      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
   document.querySelector(".display-temp").innerHTML = Math.round(
     response.data.main.temp
@@ -23,6 +23,8 @@ function displayWeather(response) {
     ".display-wind"
   ).innerHTML = `${response.data.wind.speed}km/h`;
   celsiusTemp = response.data.main.temp;
+  document.title = `Weather in ${response.data.name}`;
+  console.log(response);
 }
 
 //// Search for city
