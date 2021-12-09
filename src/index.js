@@ -25,6 +25,8 @@ function displayWeather(response) {
   celsiusTemp = response.data.main.temp;
   document.title = `Weather in ${response.data.name}`;
   console.log(response);
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
 }
 
 //// Search for city
@@ -122,3 +124,26 @@ let minutes = (now.getMinutes() < 10 ? "0" : "") + now.getMinutes();
 //Day +4
 
 //Day +5
+
+function displayForecast() {
+  let forecastElement = document.getElementById("weather-forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <div class="col-sm forecast-each">
+    <div class="forecast-day">${day}</div>
+    <div class="forecast-icon">X</div>
+    <div class="forecast-temp">
+      <span class="forecast-temp-max">2°</span>
+      <span class="forecast-temp-min">0°</span>
+    </div>
+  </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();
