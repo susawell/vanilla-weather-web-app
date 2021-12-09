@@ -82,11 +82,8 @@ li {
   color: #ec6e4c;
   text-transform: lowercase;
 }
-
-.current-weather {
+.display-data {
   text-align: end;
-  position: relative;
-  top: -90;
 }
 
 .display-temp {
@@ -94,37 +91,30 @@ li {
   position: relative;
   top: -13px;
 }
+
 .current-icon {
   position: relative;
   top: -32px;
   font-size: 3em;
 }
 
-.temp-divide {
+.metric {
+  font-size: 1.5em;
   position: relative;
   top: -41px;
-  font-size: 1.5em;
-}
-.metric-celsius {
-  position: relative;
-  top: -41px;
-  font-size: 1.5em;
 }
 
-.current-weather .active {
+.metric .active {
   color: black;
   cursor: default;
   text-decoration: none;
-}
-
-.forecast-each {
-  text-align: center;
 }
 
 .forecast-day {
   color: #9b9ea5;
   padding: 20px 0 10px;
 }
+
 .forecast-icon {
   padding: 10px 0 10px;
 }

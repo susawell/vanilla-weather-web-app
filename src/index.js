@@ -133,7 +133,7 @@ function displayForecast() {
     forecastHTML =
       forecastHTML +
       `
-  <div class="col-sm forecast-each">
+  <div class="col-sm">
     <div class="forecast-day">${day}</div>
     <div class="forecast-icon">X</div>
     <div class="forecast-temp">
