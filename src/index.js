@@ -24,8 +24,6 @@ function displayWeather(response) {
   ).innerHTML = `${response.data.wind.speed}km/h`;
   celsiusTemp = response.data.main.temp;
   document.title = `Weather in ${response.data.name}`;
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
 
   getForecast(response.data.coord);
 }
@@ -67,35 +65,6 @@ function getPosition(event) {
 let locationButton = document.querySelector("#current-location-btn");
 locationButton.addEventListener("click", getPosition);
 
-// Unit conversion C / F
-//To Fahrenheit
-function displayFahrenheitTemp(event) {
-  event.preventDefault();
-  let fahrenheitTemp = celsiusTemp * 1.8 + 32;
-  let temperatureElement = document.querySelector(".display-temp");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-}
-
-let celsiusTemp = null;
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
-
-//To Celsius
-
-function displayCelsiusTemp(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector(".display-temp");
-  temperatureElement.innerHTML = Math.round(celsiusTemp);
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-}
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemp);
-
 //// Dates
 
 let now = new Date();
@@ -124,7 +93,6 @@ function formatForecastTime(timestamp) {
 
 function displayForecast(response) {
   let forecast = response.data.daily;
-  console.log(forecast);
 
   let forecastElement = document.getElementById("weather-forecast");
 
