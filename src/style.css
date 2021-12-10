@@ -116,18 +116,16 @@ li {
 
 .forecast-day {
   color: #9b9ea5;
-  padding: 20px 0 10px;
+  padding-top: 20px;
 }
 
 .forecast-icon {
-  padding: 10px 0 10px;
   width: 60px;
-  height: 80px;
+  height: 60px;
 }
 
 .forecast-temp {
   color: #ec6e4c;
-  padding: 10px 0 0;
 }
 
 .forecast-temp-max {
