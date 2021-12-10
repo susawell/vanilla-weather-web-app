@@ -1,7 +1,9 @@
 //// Display weather
 
 function displayWeather(response) {
-  document.querySelector(".display-city").innerHTML = response.data.name;
+  document.querySelector(
+    ".display-city"
+  ).innerHTML = `${response.data.name}, ${response.data.sys.country}`;
   document
     .querySelector(".current-icon")
     .setAttribute(
@@ -24,7 +26,6 @@ function displayWeather(response) {
   ).innerHTML = `${response.data.wind.speed}km/h`;
   celsiusTemp = response.data.main.temp;
   document.title = `Weather in ${response.data.name}`;
-
   getForecast(response.data.coord);
 }
 
@@ -129,4 +130,4 @@ function getForecast(coordinates) {
 }
 
 // Default
-searchCity("Cologne");
+searchCity("Havana");
