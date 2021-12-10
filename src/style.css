@@ -110,6 +110,10 @@ li {
   text-decoration: none;
 }
 
+.forecast {
+  text-align: center;
+}
+
 .forecast-day {
   color: #9b9ea5;
   padding: 20px 0 10px;
@@ -117,6 +121,8 @@ li {
 
 .forecast-icon {
   padding: 10px 0 10px;
+  width: 60px;
+  height: 80px;
 }
 
 .forecast-temp {

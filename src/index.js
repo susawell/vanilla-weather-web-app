@@ -24,9 +24,10 @@ function displayWeather(response) {
   ).innerHTML = `${response.data.wind.speed}km/h`;
   celsiusTemp = response.data.main.temp;
   document.title = `Weather in ${response.data.name}`;
-  console.log(response);
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
+
+  getForecast(response.data.coord);
 }
 
 //// Search for city
@@ -95,9 +96,6 @@ function displayCelsiusTemp(event) {
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
-// Default
-searchCity("Cologne");
-
 //// Dates
 
 let now = new Date();
@@ -115,35 +113,52 @@ let weekday = weekdays[now.getDay()];
 let hour = now.getHours();
 let minutes = (now.getMinutes() < 10 ? "0" : "") + now.getMinutes();
 
-//Day +1
+///// Forecast
 
-//Day +2
+function formatForecastTime(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
 
-//Day +3
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  console.log(forecast);
 
-//Day +4
-
-//Day +5
-
-function displayForecast() {
   let forecastElement = document.getElementById("weather-forecast");
+
   let forecastHTML = `<div class="row">`;
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-  <div class="col-sm">
-    <div class="forecast-day">${day}</div>
-    <div class="forecast-icon">X</div>
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
+  <div class="col-sm forecast">
+    <div class="forecast-day">${formatForecastTime(forecastDay.dt)}</div>
+    <div><img class="forecast-icon" src="https://openweathermap.org/img/wn/${
+      forecastDay.weather[0].icon
+    }@2x.png"></div>
     <div class="forecast-temp">
-      <span class="forecast-temp-max">2°</span>
-      <span class="forecast-temp-min">0°</span>
+      <span class="forecast-temp-max">${Math.round(forecastDay.temp.max)}</span>
+      <span class="forecast-temp-min"> | ${Math.round(
+        forecastDay.temp.min
+      )} °C</span>
     </div>
   </div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
-displayForecast();
+function getForecast(coordinates) {
+  let apiKey = "5a3765f1638343389914d53c0f8bc4b6";
+  let lat = coordinates.lat;
+  let lon = coordinates.lon;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+// Default
+searchCity("Cologne");
